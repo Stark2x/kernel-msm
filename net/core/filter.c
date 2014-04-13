@@ -122,9 +122,13 @@ static u64 __skb_get_nlattr_nest(u64 ctx, u64 a, u64 x, u64 r4, u64 r5)
 		return 0;
 
 	if (skb->len < sizeof(struct nlattr))
-		return 0;
+	  return 0;
 
 	if (a > skb->len - sizeof(struct nlattr))
+		return 0;
+
+	nla = (struct nlattr *) &skb->data[a];
+	if (nla->nla_len > skb->len - a)
 		return 0;
 
 	nla = (struct nlattr *) &skb->data[a];
