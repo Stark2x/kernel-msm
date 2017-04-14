@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 18
 SUBLEVEL = 31
-EXTRAVERSION =
+EXTRAVERSION = -f2fs-fixed-kcal-2017-04
 NAME = Shuffling Zombie Juror
 
 # *DOCUMENTATION*
